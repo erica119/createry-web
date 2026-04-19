@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plate — Dinner, planned. Every week. Automatically.</title>
+  <meta name="description" content="AI-powered weekly meal planning tailored to your family's dietary needs, schedule, and preferences. Built by the food creators you already love." />
+  <meta property="og:title" content="Plate — Dinner, planned. Every week." />
+  <meta property="og:description" content="Stop asking what's for dinner. Get a personalized weekly menu, built by AI, approved by you." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Plate<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="creators.html">For Creators</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="creators.html" class="btn btn-ghost" style="font-size:13px;padding:9px 18px">For Creators</a>
+      <button class="btn btn-clay" style="font-size:13px;padding:9px 18px" onclick="goToApp()">Start Meal Planning</button>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="creators.html">For Creators</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-clay" onclick="goToApp()" style="margin-top:8px">Start Meal Planning</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="badge-dot"></span>Active Beta · Real Families</div>
+        <h1 class="hero-title">Dinner, planned.<br>Every week.<br><em>Automatically.</em></h1>
+        <p class="hero-sub">Tell Plate about your family: dietary needs, cook time, and what you actually like eating. Get a personalized weekly menu built by AI and approved by you.</p>
+        <div class="hero-actions">
+          <button class="btn btn-clay btn-lg" onclick="goToApp()">Start Meal Planning →</button>
+          <a href="how-it-works.html" class="btn btn-ghost btn-lg">See How It Works</a>
+        </div>
+        <div class="proof">
+          <div class="avatars">
+            <div class="av av1">LA</div>
+            <div class="av av2">MH</div>
+            <div class="av av3">JL</div>
+          </div>
+          Beta families planning smarter this week
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="float-card tl">
+          <div class="fl">This week's menu</div>
+          <div class="fv">5 dinners</div>
+          <div class="fs">✓ All restrictions met</div>
+        </div>
+        <div class="mockup">
+          <div class="m-header">
+            <div class="m-logo">Plate.</div>
+            <div class="m-week">Week of Apr 14</div>
+          </div>
+          <div class="m-day active"><span class="m-label">Mon</span><span class="m-meal">Lemon Herb Chicken</span><span class="m-tag">30 min</span></div>
+          <div class="m-day"><span class="m-label">Tue</span><span class="m-meal">Shrimp Stir Fry</span><span class="m-tag">25 min</span></div>
+          <div class="m-day"><span class="m-label">Wed</span><span class="m-meal" style="color:var(--warm-gray);font-style:italic">No-cook night</span></div>
+          <div class="m-day"><span class="m-label">Thu</span><span class="m-meal">Black Bean Tacos</span><span class="m-tag">20 min</span></div>
+          <div class="m-day"><span class="m-label">Fri</span><span class="m-meal">Salmon + Roasted Veg</span><span class="m-tag">35 min</span></div>
+          <div class="m-btn">View Shopping List</div>
+        </div>
+        <div class="float-card br">
+          <div class="fl">Grocery list ready</div>
+          <div class="fv">23 items</div>
+          <div class="fs">Organized by aisle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--cream-dark)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">How It Works</span></div>
+    <h2 style="text-align:center;margin-bottom:48px">Three steps to a week of dinners you'll actually want to make</h2>
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <h3>Tell us about your family</h3>
+        <p>Share household size, dietary restrictions, cook time per day, and the cuisines you love. Takes 5 minutes.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <h3>Get your weekly menu</h3>
+        <p>AI picks from your creator's recipe library so nothing gets overused, variety stays balanced, and you never have to decide what's for dinner.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <h3>Shop with ease</h3>
+        <p>Your grocery list is automatically organized by aisle. Instacart integration coming soon makes it one tap to order.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURES -->
+<section class="section" style="background:var(--cream)">
+  <div class="container">
+    <div style="max-width:540px;margin-bottom:48px">
+      <span class="section-label">Features</span>
+      <h2 style="margin-bottom:12px">Meal planning that actually knows your family</h2>
+      <p>This isn't a generic weekly menu. It's built around your real life: picky eaters, busy weeknights, no-cook Fridays, and all.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat fade-up">
+        <div class="feat-icon">🧠</div>
+        <h3>Smart picks from recipes you already trust</h3>
+        <p>The AI selects from your creator's recipe library every week, making sure meals stay varied, nothing gets repeated too soon, and the "what's for dinner?" decision is made for you.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="feat-icon">🚫</div>
+        <h3>Dietary filters that actually work</h3>
+        <p>Allergies and preferences applied at the ingredient level. Nut allergy? You'll never see a recipe with tree nuts. Ever.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="feat-icon">⏱️</div>
+        <h3>Cook time matched to each day</h3>
+        <p>30 minutes on Monday, all afternoon on Saturday. Plate knows the difference, including nights you don't cook at all.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="feat-icon">🛒</div>
+        <h3>Shopping list, built automatically</h3>
+        <p>All ingredients aggregated, combined, and organized by aisle. One list, no duplicates, ready the moment you approve your menu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--cream-dark)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">Beta Feedback</span></div>
+    <h2 style="text-align:center;margin-bottom:48px">What real families are saying</h2>
+    <div class="tgrid">
+      <div class="tcard fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I've tried every meal planning app out there. Plate is the only one that remembered my kid won't eat anything with visible onions."</p>
+        <div class="t-author"><div class="t-av av1">LA</div><div><div class="t-name">Lucy A.</div><div class="t-sub">Beta user · Mom of 2</div></div></div>
+      </div>
+      <div class="tcard fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The shopping list alone saves me 20 minutes a week. Organized by aisle sounds small until you realize how much mental load it actually lifts."</p>
+        <div class="t-author"><div class="t-av av2">MH</div><div><div class="t-name">Meredith H.</div><div class="t-sub">Beta user · Busy professional</div></div></div>
+      </div>
+      <div class="tcard fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"I set my no-cook nights and my weekday time limit and Plate just respects it. No more Sunday panic about the week ahead."</p>
+        <div class="t-author"><div class="t-av av3">JL</div><div><div class="t-name">Jamie L.</div><div class="t-sub">Beta user · Family of 4</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CREATOR CALLOUT -->
+<section class="creator-band">
+  <div class="container">
+    <div class="creator-inner">
+      <div>
+        <span class="section-label">For Food Creators</span>
+        <h2>Your recipes. Your brand. Your audience in an app you didn't have to build.</h2>
+        <p>Plate gives food creators a fully white-labeled meal planning app, branded to you, powered by your recipes, earning you real revenue. No dev work. No app store.</p>
+        <a href="creators.html" class="btn btn-clay">Learn More →</a>
+        <a href="creators.html#apply" class="btn btn-white-outline" style="margin-left:10px">Apply to Partner</a>
+      </div>
+      <div class="cstats">
+        <div class="cstat"><div class="cstat-num">0</div><div class="cstat-lbl">Lines of code you'll write</div></div>
+        <div class="cstat"><div class="cstat-num">AI</div><div class="cstat-lbl">Weekly menus, auto-generated</div></div>
+        <div class="cstat"><div class="cstat-num">100%</div><div class="cstat-lbl">Your branding, your colors</div></div>
+        <div class="cstat"><div class="cstat-num">$0</div><div class="cstat-lbl">App store commissions</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-clay">
+  <div class="container">
+    <h2>Stop asking what's for dinner.</h2>
+    <p>Join the beta. Your first week's menu is waiting.</p>
+    <button class="btn-white" onclick="goToApp()">Start Meal Planning — It's Free</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Plate<span>.</span></a>
+        <p>AI-powered meal planning, white-labeled for food creators. Built for real families, real kitchens, real life.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="creators.html">For Creators</a></li>
+          <li><a onclick="goToApp()">Launch App</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="creators.html#apply">Partner With Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="https://easymealplanning.netlify.app/terms" target="_blank">Terms of Service</a></li>
+          <li><a href="https://easymealplanning.netlify.app/privacy" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://easymealplanning.netlify.app/cookies" target="_blank">Cookies Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Plate. All rights reserved.</span>
+      <span class="beta-pill">● Active Beta</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

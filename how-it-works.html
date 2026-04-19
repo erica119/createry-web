@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — Plate</title>
+  <meta name="description" content="See exactly how Plate turns your family's preferences into a personalized weekly dinner menu, grocery list, and stress-free evenings." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Plate<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="creators.html">For Creators</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="creators.html" class="btn btn-ghost" style="font-size:13px;padding:9px 18px">For Creators</a>
+      <button class="btn btn-clay" style="font-size:13px;padding:9px 18px" onclick="goToApp()">Start Meal Planning</button>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="creators.html">For Creators</a>
+  <a href="how-it-works.html">How It Works</a>
+  <a href="contact.html">Contact</a>
+  <button class="btn btn-clay" onclick="goToApp()" style="margin-top:8px">Start Meal Planning</button>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">How It Works</span>
+    <h1>From "what's for dinner?" to dinner <em>planned.</em></h1>
+    <p class="lead">Here's exactly how Plate turns your family's real-life constraints into a week of meals you'll actually make.</p>
+    <div class="page-hero-actions">
+      <button class="btn btn-clay btn-lg" onclick="goToApp()">Try It Now →</button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STEPS -->
+<section class="section" style="background:var(--cream-dark)">
+  <div class="container" style="max-width:840px">
+
+    <div class="hiw-step fade-up">
+      <div class="hiw-num">01</div>
+      <div>
+        <span class="section-label">Setup (once)</span>
+        <h3>Tell Plate about your family</h3>
+        <p>The onboarding wizard takes about 5 minutes. It asks everything needed to make sure your weekly menus actually fit your life.</p>
+        <div class="check-list">
+          <div class="check-item"><span>✓</span>Household size and individual family members</div>
+          <div class="check-item"><span>✓</span>Dietary restrictions and food allergies, applied strictly</div>
+          <div class="check-item"><span>✓</span>Cook time availability by day, including no-cook nights</div>
+          <div class="check-item"><span>✓</span>Cuisine preferences: what you love and what you never want</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-step fade-up">
+      <div class="hiw-num">02</div>
+      <div>
+        <span class="section-label">Every week</span>
+        <h3>Get your personalized weekly menu</h3>
+        <p>Each week, the AI picks from your creator's recipe library. It balances variety, avoids repeats, and filters for your family's needs so you never have to think about what's for dinner.</p>
+        <div class="check-list">
+          <div class="check-item"><span>✓</span>Recipes filtered at the ingredient level for your restrictions</div>
+          <div class="check-item"><span>✓</span>Cook times matched to each day's availability</div>
+          <div class="check-item"><span>✓</span>No repeats from the past 3 weeks</div>
+          <div class="check-item"><span>✓</span>Variety across cuisines and proteins every week</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-step fade-up">
+      <div class="hiw-num">03</div>
+      <div>
+        <span class="section-label">Review and approve</span>
+        <h3>Swap anything. Approve in one tap.</h3>
+        <p>See the full week at a glance. Tap any meal to swap it out. Approve when you're happy: that's when your grocery list is built.</p>
+      </div>
+    </div>
+
+    <div class="hiw-step fade-up">
+      <div class="hiw-num">04</div>
+      <div>
+        <span class="section-label">Shop</span>
+        <h3>Your grocery list, automatically organized</h3>
+        <p>Every ingredient from every recipe, combined and sorted so you move through the store once, not back and forth.</p>
+        <div class="check-list">
+          <div class="check-item"><span>✓</span>Ingredients aggregated and combined across all recipes</div>
+          <div class="check-item"><span>✓</span>Organized by aisle: produce, protein, pantry, dairy</div>
+          <div class="check-item"><span>✓</span>Check off items as you go with live progress tracking</div>
+          <div class="check-item"><span>✓</span>Instacart one-tap ordering coming soon</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--cream)">
+  <div class="container" style="max-width:780px">
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">Questions</span></div>
+    <h2 style="text-align:center;margin-bottom:40px">Frequently asked questions</h2>
+
+    <div class="faq-item fade-up">
+      <h4>Do I need to download an app?</h4>
+      <p>Nope. Plate is a progressive web app. It works in any browser and you can add it to your home screen without going through the App Store. On iOS, open it in Safari and tap "Add to Home Screen." On Android, tap "Install" when prompted.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>How does Plate know which recipes to use?</h4>
+      <p>Your meal planning app is powered by the recipe library of the food creator whose app you're using. The AI selects from their recipes, not a generic database. That's what makes the menus feel like they came from someone who actually cooks the way you do.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>What if my family has multiple dietary restrictions?</h4>
+      <p>Plate handles complex combinations: multiple allergies, lifestyle diets, and per-family-member restrictions all at once. Restrictions are applied at the ingredient level. If your household is gluten-free plus nut-allergy, you'll only ever see recipes that meet both conditions.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>What happens to nights I don't want to cook?</h4>
+      <p>During onboarding, you tell Plate which nights are no-cook nights. Those days are skipped in menu generation. No recipe is assigned, no ingredients added to the grocery list. Pizza Friday stays pizza Friday.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>Is Plate free to use?</h4>
+      <p>The base meal planning experience is free. Your creator may also offer premium recipe packs as optional purchases inside the app.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-forest">
+  <div class="container">
+    <h2>Ready to stop guessing?</h2>
+    <p>5 minutes to set up. Your first menu is waiting.</p>
+    <button class="btn-white-forest" onclick="goToApp()">Start Meal Planning →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Plate<span>.</span></a>
+        <p>AI-powered meal planning, white-labeled for food creators. Built for real families, real kitchens, real life.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="creators.html">For Creators</a></li>
+          <li><a onclick="goToApp()">Launch App</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="creators.html#apply">Partner With Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="https://easymealplanning.netlify.app/terms" target="_blank">Terms of Service</a></li>
+          <li><a href="https://easymealplanning.netlify.app/privacy" target="_blank">Privacy Policy</a></li>
+          <li><a href="https://easymealplanning.netlify.app/cookies" target="_blank">Cookies Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Plate. All rights reserved.</span>
+      <span class="beta-pill">● Active Beta</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
