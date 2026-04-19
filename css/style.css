@@ -141,7 +141,7 @@ p { color: var(--warm-gray); line-height: 1.75; }
 
 /* CREATOR BAND */
 .creator-band { background: var(--forest); padding: 72px 0; }
-.creator-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.creator-inner { display: flex; justify-content: center; text-align: center; max-width: 680px; margin: 0 auto; }
 .creator-band h2 { color: #fff; margin-bottom: 14px; line-height: 1.25; }
 .creator-band p { color: rgba(255,255,255,0.72); margin-bottom: 28px; }
 .creator-band .section-label { color: var(--clay-light); }

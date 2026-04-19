@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" role="img" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#FDF6EE"/>
+  <circle cx="1050" cy="80" r="320" fill="#F0D4C0" opacity="0.5"/>
+  <circle cx="200" cy="580" r="200" fill="#F0D4C0" opacity="0.3"/>
+  <rect x="0" y="0" width="6" height="630" fill="#C4622D"/>
+  <rect x="80" y="100" width="60" height="4" fill="#C4622D" rx="2"/>
+  <text x="80" y="210" font-family="Georgia, serif" font-size="88" font-weight="700" fill="#2C1810" letter-spacing="-2">Plate.</text>
+  <text x="80" y="290" font-family="Georgia, serif" font-size="42" fill="#4A3728" font-weight="400">Dinner, planned.</text>
+  <text x="80" y="342" font-family="Georgia, serif" font-size="42" fill="#4A3728" font-weight="400">Every week.</text>
+  <text x="80" y="396" font-family="Georgia, serif" font-size="42" fill="#C4622D" font-style="italic" font-weight="400">Automatically.</text>
+  <text x="80" y="470" font-family="system-ui, sans-serif" font-size="20" fill="#9B8B82" font-weight="400">AI-powered meal planning for real families.</text>
+  <rect x="80" y="530" width="180" height="48" rx="10" fill="#C4622D"/>
+  <text x="170" y="561" font-family="system-ui, sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="600">Start Meal Planning</text>
+  <rect x="730" y="100" width="380" height="420" rx="16" fill="white" stroke="#E8D5B7" stroke-width="1.5"/>
+  <rect x="730" y="100" width="380" height="56" rx="16" fill="#2C1810"/>
+  <rect x="730" y="136" width="380" height="20" fill="#2C1810"/>
+  <text x="920" y="135" font-family="Georgia, serif" font-size="18" fill="#FDF6EE" text-anchor="middle" font-weight="700">Plate.</text>
+  <text x="1010" y="135" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" text-anchor="middle">Week of Apr 14</text>
+  <rect x="750" y="172" width="340" height="44" rx="8" fill="#FFF9F0" stroke="#E8D5B7" stroke-width="1"/>
+  <rect x="750" y="172" width="4" height="44" rx="2" fill="#C4622D"/>
+  <text x="764" y="191" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">MON</text>
+  <text x="764" y="208" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Lemon Herb Chicken</text>
+  <text x="1075" y="200" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">30 min</text>
+  <rect x="750" y="224" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
+  <text x="764" y="243" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">TUE</text>
+  <text x="764" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Shrimp Stir Fry</text>
+  <text x="1075" y="252" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">25 min</text>
+  <rect x="750" y="276" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
+  <text x="764" y="295" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">WED</text>
+  <text x="764" y="312" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" font-style="italic">No-cook night</text>
+  <rect x="750" y="328" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
+  <text x="764" y="347" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">THU</text>
+  <text x="764" y="364" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Black Bean Tacos</text>
+  <text x="1075" y="356" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">20 min</text>
+  <rect x="750" y="380" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
+  <text x="764" y="399" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">FRI</text>
+  <text x="764" y="416" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Salmon + Roasted Veg</text>
+  <text x="1075" y="408" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">35 min</text>
+  <rect x="750" y="440" width="340" height="44" rx="8" fill="#C4622D"/>
+  <text x="920" y="468" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">View Shopping List →</text>
+  <text x="920" y="572" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" text-anchor="middle">plateweb.netlify.app</text>
+</svg>

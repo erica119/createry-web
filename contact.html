@@ -5,14 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Plate</title>
   <meta name="description" content="Get in touch with the Plate team. Questions about the app, creator partnerships, or anything else." />
+  <meta property="og:title" content="Contact — Plate" />
+  <meta property="og:description" content="Get in touch with the Plate team. Questions about the app, creator partnerships, or anything else." />
+  <meta property="og:image" content="https://plateweb.netlify.app/images/og-image.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://plateweb.netlify.app/images/og-image.svg" />
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+  <link rel="icon" type="image/png" href="images/plate-icon-32x32.png" />
+  <link rel="apple-touch-icon" href="images/plate-icon-192x192.png" />
+  <link rel="manifest" href="manifest.json" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWK6TQT68T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LWK6TQT68T');
+  </script>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">Plate<span>.</span></a>
+    <a class="nav-logo" href="index.html"><img src="images/plate-logo-horizontal.svg" alt="Plate" style="height:28px;display:block;" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="creators.html">For Creators</a></li>
@@ -87,7 +103,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class="footer-logo" href="index.html">Plate<span>.</span></a>
+        <a class="footer-logo" href="index.html"><img src="images/plate-logo-horizontal.svg" alt="Plate" style="height:22px;display:block;" /></a>
         <p>AI-powered meal planning, white-labeled for food creators. Built for real families, real kitchens, real life.</p>
       </div>
       <div>
@@ -122,5 +138,23 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- COOKIES BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2C1810;color:#FDF6EE;padding:1rem 1.5rem;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:0.875rem;">
+  <p style="margin:0;line-height:1.5;max-width:680px;">We use cookies to keep you signed in and improve your experience. By continuing to use Plate, you agree to our <a href="https://easymealplanning.netlify.app/cookies" target="_blank" style="color:#F0D4C0;text-decoration:underline;">Cookies Policy</a>.</p>
+  <button onclick="acceptCookies()" style="background:#C4622D;color:white;border:none;padding:0.6rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;">Got it</button>
+</div>
+<script>
+  (function() {
+    if (!localStorage.getItem('plate_cookies_accepted')) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('plate_cookies_accepted', '1');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
