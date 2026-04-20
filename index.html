@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plate — Dinner, planned. Every week. Automatically.</title>
-  <meta name="description" content="AI-powered weekly meal planning tailored to your family's dietary needs, schedule, and preferences. Built by the food creators you already love." />
-  <meta property="og:title" content="Plate — Dinner, planned. Every week." />
-  <meta property="og:description" content="Stop asking what's for dinner. Get a personalized weekly menu, built by AI, approved by you." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Plate — Dinner, planned. Every week. Automatically." />
-  <meta property="og:description" content="AI-powered weekly meal planning tailored to your family’s dietary needs, schedule, and preferences. Built by the food creators you already love." />
+  <title>Plate — White-Label AI Meal Planning for Food Creators</title>
+  <meta name="description" content="Give your audience a fully branded AI meal planning app. Your recipes, your brand, real revenue. Start free for 7 days." />
+  <meta property="og:title" content="Plate — White-Label AI Meal Planning for Food Creators" />
+  <meta property="og:description" content="Your recipes. Your brand. Your audience in a meal planning app you didn't have to build." />
   <meta property="og:image" content="https://plateweb.netlify.app/images/og-image.svg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +15,6 @@
   <link rel="icon" type="image/png" href="images/plate-icon-32x32.png" />
   <link rel="apple-touch-icon" href="images/plate-icon-192x192.png" />
   <link rel="manifest" href="manifest.json" />
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWK6TQT68T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,18 +24,17 @@
   </script>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html"><img src="images/plate-logo-horizontal.svg" alt="Plate" style="height:28px;display:block;" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="creators.html">For Creators</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="creators.html" class="btn btn-ghost" style="font-size:13px;padding:9px 18px">For Creators</a>
-      <button class="btn btn-clay" style="font-size:13px;padding:9px 18px" onclick="goToApp()">Start Meal Planning</button>
+      <a href="https://easymealplanning.netlify.app" target="_blank" class="btn btn-clay" style="font-size:13px;padding:9px 18px">Start Free Trial</a>
     </div>
     <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -47,149 +42,207 @@
 
 <div class="mobile-nav">
   <a href="index.html">Home</a>
-  <a href="creators.html">For Creators</a>
   <a href="how-it-works.html">How It Works</a>
+  <a href="pricing.html">Pricing</a>
   <a href="contact.html">Contact</a>
-  <button class="btn btn-clay" onclick="goToApp()" style="margin-top:8px">Start Meal Planning</button>
+  <a href="https://easymealplanning.netlify.app" target="_blank" class="btn btn-clay" style="margin-top:8px">Start Free Trial</a>
 </div>
-
-<!-- HERO -->
-<section class="hero">
+<section class="page-hero" style="background:linear-gradient(135deg,rgba(61,90,71,0.06) 0%,transparent 60%),var(--cream)">
   <div class="container">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-badge"><span class="badge-dot"></span>Active Beta · Real Families</div>
-        <h1 class="hero-title">Dinner, planned.<br>Every week.<br><em>Automatically.</em></h1>
-        <p class="hero-sub">Tell Plate about your family: dietary needs, cook time, and what you actually like eating. Get a personalized weekly menu built by AI and approved by you.</p>
-        <div class="hero-actions">
-          <button class="btn btn-clay btn-lg" onclick="goToApp()">Start Meal Planning →</button>
-          <a href="how-it-works.html" class="btn btn-ghost btn-lg">See How It Works</a>
-        </div>
-        <div class="proof">
-          <div class="avatars">
-            <div class="av av1">LA</div>
-            <div class="av av2">MH</div>
-            <div class="av av3">JL</div>
-          </div>
-          Beta families planning smarter this week
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="float-card tl">
-          <div class="fl">This week's menu</div>
-          <div class="fv">5 dinners</div>
-          <div class="fs">✓ All restrictions met</div>
-        </div>
-        <div class="mockup">
-          <div class="m-header">
-            <div class="m-logo">Plate.</div>
-            <div class="m-week">Week of Apr 14</div>
-          </div>
-          <div class="m-day active"><span class="m-label">Mon</span><span class="m-meal">Lemon Herb Chicken</span><span class="m-tag">30 min</span></div>
-          <div class="m-day"><span class="m-label">Tue</span><span class="m-meal">Shrimp Stir Fry</span><span class="m-tag">25 min</span></div>
-          <div class="m-day"><span class="m-label">Wed</span><span class="m-meal" style="color:var(--warm-gray);font-style:italic">No-cook night</span></div>
-          <div class="m-day"><span class="m-label">Thu</span><span class="m-meal">Black Bean Tacos</span><span class="m-tag">20 min</span></div>
-          <div class="m-day"><span class="m-label">Fri</span><span class="m-meal">Salmon + Roasted Veg</span><span class="m-tag">35 min</span></div>
-          <div class="m-btn">View Shopping List</div>
-        </div>
-        <div class="float-card br">
-          <div class="fl">Grocery list ready</div>
-          <div class="fv">23 items</div>
-          <div class="fs">Organized by aisle</div>
-        </div>
-      </div>
+    <span class="section-label">For Food Creators and Brands</span>
+    <h1>Give your followers the app <em>they've been asking for.</em></h1>
+    <p class="lead">White-label AI meal planning, branded entirely to you. Your recipes, your colors, your audience — without a single line of code.</p>
+    <div class="page-hero-actions">
+      <a href="https://easymealplanning.netlify.app" target="_blank" class="btn btn-forest btn-lg">Start Free Trial → 7 days free</a>
+      <a href="how-it-works.html" class="btn btn-ghost btn-lg">See How It Works</a>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
-
-<!-- HOW IT WORKS -->
 <section class="section" style="background:var(--cream-dark)">
   <div class="container">
-    <div style="text-align:center;margin-bottom:8px"><span class="section-label">How It Works</span></div>
-    <h2 style="text-align:center;margin-bottom:48px">Three steps to a week of dinners you'll actually want to make</h2>
-    <div class="steps-grid">
-      <div class="step-card fade-up">
-        <div class="step-num">1</div>
-        <h3>Tell us about your family</h3>
-        <p>Share household size, dietary restrictions, cook time per day, and the cuisines you love. Takes 5 minutes.</p>
-      </div>
-      <div class="step-card fade-up">
-        <div class="step-num">2</div>
-        <h3>Get your weekly menu</h3>
-        <p>AI picks from your creator's recipe library so nothing gets overused, variety stays balanced, and you never have to decide what's for dinner.</p>
-      </div>
-      <div class="step-card fade-up">
-        <div class="step-num">3</div>
-        <h3>Shop with ease</h3>
-        <p>Your grocery list is automatically organized by aisle. Instacart integration coming soon makes it one tap to order.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FEATURES -->
-<section class="section" style="background:var(--cream)">
-  <div class="container">
-    <div style="max-width:540px;margin-bottom:48px">
-      <span class="section-label">Features</span>
-      <h2 style="margin-bottom:12px">Meal planning that actually knows your family</h2>
-      <p>This isn't a generic weekly menu. It's built around your real life: picky eaters, busy weeknights, no-cook Fridays, and all.</p>
-    </div>
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">What You Get</span></div>
+    <h2 style="text-align:center;margin-bottom:48px">Everything you'd need to build. Already built.</h2>
     <div class="feat-grid">
       <div class="feat fade-up">
+        <div class="feat-icon">🎨</div>
+        <h3>Your brand, top to bottom</h3>
+        <p>Your logo, your colors, your name. Users see your brand everywhere, not Plate's. It's your app; we just power it.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="feat-icon">📚</div>
+        <h3>Your recipe library, front and center</h3>
+        <p>Upload via CSV, paste a URL, or add manually. The AI selects from your recipes each week, not a generic database.</p>
+      </div>
+      <div class="feat fade-up">
         <div class="feat-icon">🧠</div>
-        <h3>Smart picks from recipes you already trust</h3>
-        <p>The AI selects from your creator's recipe library every week, making sure meals stay varied, nothing gets repeated too soon, and the "what's for dinner?" decision is made for you.</p>
+        <h3>AI menus that do the deciding</h3>
+        <p>Your audience gets a fresh weekly dinner plan chosen from your recipes. The AI handles variety, repeat avoidance, and dietary filtering so your followers never have to think about what's for dinner.</p>
       </div>
       <div class="feat fade-up">
-        <div class="feat-icon">🚫</div>
-        <h3>Dietary filters that actually work</h3>
-        <p>Allergies and preferences applied at the ingredient level. Nut allergy? You'll never see a recipe with tree nuts. Ever.</p>
+        <div class="feat-icon">💰</div>
+        <h3>Premium recipe pack sales</h3>
+        <p>Sell seasonal plans, specialty cookbooks, or exclusive drops directly through your app. Stripe handles payments and payouts to you.</p>
       </div>
       <div class="feat fade-up">
-        <div class="feat-icon">⏱️</div>
-        <h3>Cook time matched to each day</h3>
-        <p>30 minutes on Monday, all afternoon on Saturday. Plate knows the difference, including nights you don't cook at all.</p>
+        <div class="feat-icon">📊</div>
+        <h3>Creator analytics dashboard</h3>
+        <p>See your active users, menu generation activity, top-performing recipes, and earnings in one place, updated in real time.</p>
       </div>
       <div class="feat fade-up">
         <div class="feat-icon">🛒</div>
-        <h3>Shopping list, built automatically</h3>
-        <p>All ingredients aggregated, combined, and organized by aisle. One list, no duplicates, ready the moment you approve your menu.</p>
+        <h3>Instacart integration (coming soon)</h3>
+        <p>Your audience will be able to push their grocery list to Instacart with one tap. More utility for them, more value for your app.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- CREATOR CALLOUT -->
-<section class="creator-band">
+<div class="divider"></div>
+<section class="section" style="background:var(--cream)">
   <div class="container">
-    <div class="creator-inner">
-      <div>
-        <span class="section-label">For Food Creators</span>
-        <h2>Your recipes. Your brand. Your audience in an app you didn't have to build.</h2>
-        <p>Plate gives food creators a fully white-labeled meal planning app, branded to you, powered by your recipes, earning you real revenue. No dev work. No app store.</p>
-        <a href="creators.html" class="btn btn-clay">Learn More →</a>
-        <a href="creators.html#apply" class="btn btn-white-outline" style="margin-left:10px">Apply to Partner</a>
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">How It Works</span></div>
+    <h2 style="text-align:center;margin-bottom:48px">From signup to live meal planning app in hours, not weeks</h2>
+    <div class="creator-steps">
+      <div class="creator-step fade-up">
+        <div class="creator-step-icon">✏️</div>
+        <h4>Create your account</h4>
+        <p>Sign up as a creator, connect Stripe for payouts, and set up your account in minutes. No application, no waiting.</p>
+      </div>
+      <div class="creator-step fade-up">
+        <div class="creator-step-icon">🎨</div>
+        <h4>Set your branding</h4>
+        <p>Upload your logo, choose your colors. Your branded app is live instantly with no deploy required.</p>
+      </div>
+      <div class="creator-step fade-up">
+        <div class="creator-step-icon">🍳</div>
+        <h4>Upload your recipes</h4>
+        <p>Import via CSV, paste a URL, or add manually. The more recipes you have, the better the AI menus get.</p>
+      </div>
+      <div class="creator-step fade-up">
+        <div class="creator-step-icon">📣</div>
+        <h4>Share with your audience</h4>
+        <p>Send your audience a single link to your branded app. They sign up and start getting weekly menus powered by your recipes.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-clay">
+<div class="divider"></div>
+<section class="section" style="background:var(--cream-dark)">
   <div class="container">
-    <h2>Stop asking what's for dinner.</h2>
-    <p>Join the beta. Your first week's menu is waiting.</p>
-    <button class="btn-white" onclick="goToApp()">Start Meal Planning — It's Free</button>
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">Revenue Model</span></div>
+    <h2 style="text-align:center;margin-bottom:8px">Two ways to earn. Both recurring.</h2>
+    <p style="text-align:center;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;">You keep 80% of everything your audience pays. Plate handles the infrastructure, payments, and AI — you focus on your content.</p>
+
+    <div class="rev-grid" style="margin-bottom:56px;margin-top:16px;gap:32px">
+      <div class="rev-card featured fade-up">
+        <div class="rev-badge">Recurring monthly</div>
+        <div class="feat-icon">🔄</div>
+        <h3>User Subscriptions</h3>
+        <div class="rev-amount">80%<span class="rev-amount-sub"> to you</span></div>
+        <p>Your audience pays $9/month or $90/year to access your branded app. You keep 80% of every payment — predictable, recurring revenue that compounds as your audience grows.</p>
+      </div>
+      <div class="rev-card featured fade-up">
+        <div class="rev-badge">On demand</div>
+        <div class="feat-icon">💳</div>
+        <h3>Recipe Pack Sales</h3>
+        <div class="rev-amount">80%<span class="rev-amount-sub"> to you</span></div>
+        <p>Sell seasonal cookbooks, specialty meal plans, or exclusive recipe drops directly through your app. You set the price. Stripe pays you directly on every sale.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:24px"><span class="section-label">What This Looks Like in Practice</span></div>
+    <h3 style="text-align:center;margin-bottom:32px;font-family:var(--font-serif);color:var(--espresso)">Real numbers at different audience sizes</h3>
+
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.95rem;font-family:var(--font-sans)">
+        <thead>
+          <tr style="border-bottom:2px solid #E8D5B7">
+            <th style="text-align:left;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em"></th>
+            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">50 subscribers</th>
+            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">100 subscribers</th>
+            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">1,000 subscribers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #E8D5B7;background:white">
+            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Monthly subscription revenue</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$360/mo</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$720/mo</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$7,200/mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #E8D5B7;background:#FDF6EE">
+            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Annual subscription revenue</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$3,600/yr</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$7,200/yr</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$72,000/yr</td>
+          </tr>
+          <tr style="border-bottom:1px solid #E8D5B7;background:white">
+            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Recipe pack sales <span style="font-weight:400;color:#9B8B82;font-size:0.85rem">($19 pack, 80% to you)</span></td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$760</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$1,520</td>
+            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$15,200</td>
+          </tr>
+          <tr style="background:#F5EFE6">
+            <td style="padding:14px 16px;color:#2C1810;font-weight:700">Combined monthly + one pack launch</td>
+            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$1,120</td>
+            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$2,240</td>
+            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$22,400</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center;font-size:0.8rem;color:#9B8B82;margin-top:16px">Revenue figures shown are your 80% share after Plate's platform fee. Platform fee not included in calculations.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
+<div class="divider"></div>
+<section class="section" style="background:var(--cream)">
+  <div class="container" style="max-width:780px">
+    <div style="text-align:center;margin-bottom:8px"><span class="section-label">Questions</span></div>
+    <h2 style="text-align:center;margin-bottom:40px">Frequently asked questions</h2>
+
+    <div class="faq-item fade-up">
+      <h4>Do I need any technical skills?</h4>
+      <p>None at all. Plate is fully no-code. You upload your recipes, set your branding, and share a link with your audience. No developers, no app stores, no deploys.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>How long does it take to get set up?</h4>
+      <p>Most creators have their branded app live within a few hours of signing up. Create your account, connect Stripe, upload your logo and colors, import your recipes, and you're ready to share.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>What happens after my free trial?</h4>
+      <p>After 7 days, your plan starts at $199/month or $1,999/year. You'll enter your payment details when you sign up, but you won't be charged until the trial ends. Cancel anytime before then with no charge.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>Can I use my own branding?</h4>
+      <p>Yes — completely. Your logo, your brand colors, your name. Your audience sees your brand everywhere inside the app, not Plate's. It's your app; we just power it.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>How do I get paid?</h4>
+      <p>You connect your Stripe account during onboarding. Revenue from user subscriptions and recipe pack sales flows directly to your Stripe account. You keep 80% of every transaction — Plate retains a 20% platform fee. Payouts follow your standard Stripe schedule.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>What if I already have recipes on a blog or website?</h4>
+      <p>You can import recipes by pasting a URL directly into the dashboard and Plate will extract the recipe automatically. You can also import via CSV or add recipes manually one by one.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>Is there a long-term contract?</h4>
+      <p>No. Monthly plans cancel anytime. Annual plans are billed once per year. No setup fees, no cancellation fees, no surprises.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section class="cta-forest">
+  <div class="container">
+    <h2>Ready to give your audience the app they've been asking for?</h2>
+    <p>Start your free 7-day trial. Your branded app will be live before the trial ends.</p>
+    <a href="https://easymealplanning.netlify.app" target="_blank" class="btn-white-forest">Start Free Trial →</a>
+  </div>
+</section>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -201,15 +254,13 @@
         <h5>Product</h5>
         <ul>
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="creators.html">For Creators</a></li>
-          <li><a onclick="goToApp()">Launch App</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
         </ul>
       </div>
       <div>
-        <h5>Company</h5>
+        <h5>Get Started</h5>
         <ul>
-          <li><a href="creators.html#apply">Partner With Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://easymealplanning.netlify.app" target="_blank">Start Free Trial</a></li>
         </ul>
       </div>
       <div>
@@ -230,7 +281,6 @@
 
 <script src="js/main.js"></script>
 
-<!-- COOKIES BANNER -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2C1810;color:#FDF6EE;padding:1rem 1.5rem;z-index:9999;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:0.875rem;">
   <p style="margin:0;line-height:1.5;max-width:680px;">We use cookies to keep you signed in and improve your experience. By continuing to use Plate, you agree to our <a href="https://easymealplanning.netlify.app/cookies" target="_blank" style="color:#F0D4C0;text-decoration:underline;">Cookies Policy</a>.</p>
   <button onclick="acceptCookies()" style="background:#C4622D;color:white;border:none;padding:0.6rem 1.25rem;border-radius:8px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;">Got it</button>

@@ -167,7 +167,7 @@ p { color: var(--warm-gray); line-height: 1.75; }
 .page-hero-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
 
 /* REVENUE CARDS */
-.rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+.rev-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 860px; margin: 0 auto; }
 .rev-card { background: var(--cream-dark); border-radius: var(--radius-lg); border: 0.5px solid rgba(196,149,106,0.2); padding: 32px; }
 .rev-card.featured { border: 2px solid var(--clay); position: relative; }
 .rev-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--clay); color: #fff; font-size: 10px; font-weight: 700; padding: 3px 12px; border-radius: var(--radius-pill); white-space: nowrap; letter-spacing: 0.05em; text-transform: uppercase; }
