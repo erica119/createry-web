@@ -22,8 +22,276 @@
     gtag('js', new Date());
     gtag('config', 'G-LWK6TQT68T');
   </script>
+
+  <style>
+    /* ── Revenue Calculator ── */
+    .calc-wrap {
+      margin-top: 48px;
+    }
+    .calc-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(44,24,16,0.09);
+    }
+    .calc-top {
+      padding: 40px 44px 36px;
+    }
+    .calc-bottom {
+      background: #3D5A47;
+      padding: 40px 44px;
+    }
+
+    /* Audience pills */
+    .calc-field-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #7A6A62;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .calc-field-hint {
+      font-size: 0.8rem;
+      color: #B0A098;
+      margin: 0 0 12px;
+    }
+    .audience-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .audience-pill {
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1.5px solid #D6C4B4;
+      background: transparent;
+      color: #7A6A62;
+      font-size: 0.85rem;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1;
+    }
+    .audience-pill:hover {
+      border-color: #3D5A47;
+      color: #3D5A47;
+    }
+    .audience-pill.active {
+      background: #3D5A47;
+      border-color: #3D5A47;
+      color: #fff;
+    }
+
+    /* Context strip */
+    .conv-context {
+      background: #F5EFE6;
+      border-left: 3px solid #3D5A47;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      color: #7A6A62;
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+    .conv-context strong { color: #2C1810; }
+
+    /* Divider inside card */
+    .calc-divider {
+      border: none;
+      border-top: 1px solid #EDE4D8;
+      margin: 28px 0;
+    }
+
+    /* Slider */
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+    .slider-big-val {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #2C1810;
+      font-family: var(--font-serif);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    input[type="range"].plate-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #E8D5B7;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"].plate-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #3D5A47;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(61,90,71,0.35);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    input[type="range"].plate-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+    input[type="range"].plate-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #3D5A47;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(61,90,71,0.35);
+      cursor: pointer;
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 7px;
+    }
+    .slider-tick { font-size: 0.71rem; color: #B0A098; font-weight: 500; }
+
+    /* Locked pills */
+    .locked-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .locked-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #F5EFE6;
+      border: 1px solid #E8D5B7;
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.81rem;
+      color: #7A6A62;
+    }
+    .locked-pill strong { color: #2C1810; font-weight: 700; }
+
+    /* Results */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .result-box {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .result-box-label {
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 6px;
+    }
+    .result-box-value {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #fff;
+      font-family: var(--font-serif);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .result-box-sub { font-size: 0.74rem; color: rgba(255,255,255,0.38); margin-top: 5px; }
+
+    /* Total */
+    .total-box {
+      background: rgba(196,98,45,0.22);
+      border: 1px solid rgba(196,98,45,0.4);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .total-box-lhs { }
+    .total-box-label { font-size: 0.9rem; color: rgba(255,255,255,0.75); font-weight: 500; margin-bottom: 2px; }
+    .total-box-sublabel { font-size: 0.74rem; color: rgba(255,255,255,0.35); }
+    .total-box-value {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #F5C896;
+      font-family: var(--font-serif);
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    /* Bars */
+    .rev-bars { margin-bottom: 28px; }
+    .rev-bar-row { margin-bottom: 12px; }
+    .rev-bar-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.81rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 5px;
+    }
+    .rev-bar-meta span:last-child { color: rgba(255,255,255,0.85); font-weight: 600; }
+    .rev-bar-track {
+      height: 7px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .rev-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.45s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .rev-bar-fill.sub { background: #7DC4A0; }
+    .rev-bar-fill.pack { background: #F5A56B; }
+
+    /* CTA */
+    .calc-cta { text-align: center; }
+    .calc-cta p { font-size: 0.84rem; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .calc-cta-btn {
+      display: inline-block;
+      background: #C4622D;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+    .calc-cta-btn:hover {
+      background: #D4733E;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(196,98,45,0.4);
+    }
+    .calc-footnote {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.28);
+      text-align: center;
+      line-height: 1.65;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .calc-top { padding: 26px 22px 22px; }
+      .calc-bottom { padding: 26px 22px 30px; }
+      .results-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .result-box { padding: 14px 12px; }
+      .result-box-value { font-size: 1.2rem; }
+      .slider-big-val { font-size: 1.5rem; }
+      .total-box { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .total-box-value { font-size: 1.75rem; }
+    }
+  </style>
 </head>
 <body>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html"><img src="images/plate-logo-horizontal.svg" alt="Createry" style="height:28px;display:block;" /></a>
@@ -31,6 +299,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
       <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog/">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -44,9 +313,11 @@
   <a href="index.html">Home</a>
   <a href="how-it-works.html">How It Works</a>
   <a href="pricing.html">Pricing</a>
+  <a href="blog/">Blog</a>
   <a href="contact.html">Contact</a>
   <a href="https://easymealplanning.netlify.app" target="_blank" class="btn btn-clay" style="margin-top:8px">Start Free Trial</a>
 </div>
+
 <section class="page-hero" style="background:linear-gradient(135deg,rgba(61,90,71,0.06) 0%,transparent 60%),var(--cream)">
   <div class="container">
     <span class="section-label">For Food Creators and Brands</span>
@@ -60,6 +331,7 @@
 </section>
 
 <div class="divider"></div>
+
 <section class="section" style="background:var(--cream-dark)">
   <div class="container">
     <div style="text-align:center;margin-bottom:8px"><span class="section-label">What You Get</span></div>
@@ -100,6 +372,7 @@
 </section>
 
 <div class="divider"></div>
+
 <section class="section" style="background:var(--cream)">
   <div class="container">
     <div style="text-align:center;margin-bottom:8px"><span class="section-label">How It Works</span></div>
@@ -130,6 +403,8 @@
 </section>
 
 <div class="divider"></div>
+
+<!-- REVENUE MODEL + CALCULATOR -->
 <section class="section" style="background:var(--cream-dark)">
   <div class="container">
     <div style="text-align:center;margin-bottom:8px"><span class="section-label">Revenue Model</span></div>
@@ -153,52 +428,134 @@
       </div>
     </div>
 
-    <div style="text-align:center;margin-bottom:24px"><span class="section-label">What This Looks Like in Practice</span></div>
-    <h3 style="text-align:center;margin-bottom:32px;font-family:var(--font-serif);color:var(--espresso)">Real numbers at different audience sizes</h3>
+    <!-- INTERACTIVE CALCULATOR -->
+    <div style="text-align:center;margin-bottom:16px"><span class="section-label">See What You Could Earn</span></div>
+    <h3 style="text-align:center;margin-bottom:8px;font-family:var(--font-serif);color:var(--espresso)">Enter your audience size. Get real numbers.</h3>
+    <p style="text-align:center;font-size:0.88rem;color:#9B8B82;margin-bottom:0;max-width:500px;margin-left:auto;margin-right:auto;">Based on real food creator conversion benchmarks. All figures show your 80% share.</p>
 
-    <div style="overflow-x:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:0.95rem;font-family:var(--font-sans)">
-        <thead>
-          <tr style="border-bottom:2px solid #E8D5B7">
-            <th style="text-align:left;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em"></th>
-            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">50 subscribers</th>
-            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">100 subscribers</th>
-            <th style="text-align:center;padding:12px 16px;color:#9B8B82;font-weight:600;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em">1,000 subscribers</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid #E8D5B7;background:white">
-            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Monthly subscription revenue</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$360/mo</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$720/mo</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$7,200/mo</td>
-          </tr>
-          <tr style="border-bottom:1px solid #E8D5B7;background:#FDF6EE">
-            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Annual subscription revenue</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$3,600/yr</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$7,200/yr</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$72,000/yr</td>
-          </tr>
-          <tr style="border-bottom:1px solid #E8D5B7;background:white">
-            <td style="padding:14px 16px;color:#2C1810;font-weight:600">Recipe pack sales <span style="font-weight:400;color:#9B8B82;font-size:0.85rem">($19 pack, 80% to you)</span></td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$760</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$1,520</td>
-            <td style="text-align:center;padding:14px 16px;color:#C4622D;font-weight:700">$15,200</td>
-          </tr>
-          <tr style="background:#F5EFE6">
-            <td style="padding:14px 16px;color:#2C1810;font-weight:700">Combined monthly + one pack launch</td>
-            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$1,120</td>
-            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$2,240</td>
-            <td style="text-align:center;padding:14px 16px;color:#2C1810;font-weight:700;font-size:1.05rem">$22,400</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="calc-wrap fade-up">
+      <div class="calc-card">
+
+        <!-- Top: inputs -->
+        <div class="calc-top">
+
+          <div>
+            <span class="calc-field-label">Where is your audience?</span>
+            <p class="calc-field-hint">This affects how many followers convert to paying subscribers.</p>
+            <div class="audience-pills">
+              <button class="audience-pill" data-type="newsletter" onclick="setAudience('newsletter')">Newsletter / email list</button>
+              <button class="audience-pill active" data-type="social" onclick="setAudience('social')">Social media following</button>
+              <button class="audience-pill" data-type="blog" onclick="setAudience('blog')">Blog / SEO traffic</button>
+            </div>
+            <div class="conv-context" id="conv-context">
+              Social following estimates use a <strong>1.5% conversion rate</strong> based on MemberKitchens benchmark data for food creator audiences. Engaged micro-audiences often outperform this.
+            </div>
+          </div>
+
+          <hr class="calc-divider" />
+
+          <div>
+            <div class="slider-label-row">
+              <span class="calc-field-label" style="margin:0">Your follower / subscriber count</span>
+              <span class="slider-big-val" id="followers-display">25,000</span>
+            </div>
+            <input type="range" class="plate-slider" id="followers-slider"
+              min="1000" max="200000" step="1000" value="25000" />
+            <div class="slider-ticks">
+              <span class="slider-tick">1K</span>
+              <span class="slider-tick">50K</span>
+              <span class="slider-tick">100K</span>
+              <span class="slider-tick">150K</span>
+              <span class="slider-tick">200K</span>
+            </div>
+          </div>
+
+          <hr class="calc-divider" />
+
+          <div>
+            <span class="calc-field-label">Platform pricing — fixed, always</span>
+            <div class="locked-row">
+              <div class="locked-pill">🔒 User subscription <strong>$9/month</strong></div>
+              <div class="locked-pill">🔒 Recipe pack price <strong>$20 avg</strong></div>
+              <div class="locked-pill">🔒 Your share <strong>80% of all revenue</strong></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom: results -->
+        <div class="calc-bottom">
+
+          <div class="results-grid">
+            <div class="result-box">
+              <div class="result-box-label">Paying subscribers</div>
+              <div class="result-box-value" id="result-subs">—</div>
+              <div class="result-box-sub" id="result-conv-label">at 1.5% conversion</div>
+            </div>
+            <div class="result-box">
+              <div class="result-box-label">Monthly pack buyers</div>
+              <div class="result-box-value" id="result-pack-buyers">—</div>
+              <div class="result-box-sub">12% of subscribers</div>
+            </div>
+            <div class="result-box">
+              <div class="result-box-label">Subscription revenue</div>
+              <div class="result-box-value" id="result-sub-rev">—</div>
+              <div class="result-box-sub">your 80% share</div>
+            </div>
+            <div class="result-box">
+              <div class="result-box-label">Recipe pack revenue</div>
+              <div class="result-box-value" id="result-pack-rev">—</div>
+              <div class="result-box-sub">your 80% share</div>
+            </div>
+          </div>
+
+          <div class="total-box">
+            <div class="total-box-lhs">
+              <div class="total-box-label">Estimated monthly revenue</div>
+              <div class="total-box-sublabel">before $199/mo platform fee</div>
+            </div>
+            <div class="total-box-value" id="result-total">—</div>
+          </div>
+
+          <div class="rev-bars">
+            <div class="rev-bar-row">
+              <div class="rev-bar-meta">
+                <span>Subscriptions</span>
+                <span id="sub-pct-label">—%</span>
+              </div>
+              <div class="rev-bar-track">
+                <div class="rev-bar-fill sub" id="sub-bar" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="rev-bar-row">
+              <div class="rev-bar-meta">
+                <span>Recipe packs</span>
+                <span id="pack-pct-label">—%</span>
+              </div>
+              <div class="rev-bar-track">
+                <div class="rev-bar-fill pack" id="pack-bar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-cta">
+            <p>Ready to turn this into real revenue?</p>
+            <a href="https://easymealplanning.netlify.app" target="_blank" class="calc-cta-btn">Start your free 7-day trial →</a>
+          </div>
+
+          <p class="calc-footnote">
+            Conversion benchmarks sourced from MemberKitchens dataset and food creator industry norms. Recipe pack attach rate of 12% reflects content purchase behavior for engaged food audiences. Estimates are projections, not guarantees.
+          </p>
+
+        </div>
+      </div>
     </div>
-    <p style="text-align:center;font-size:0.8rem;color:#9B8B82;margin-top:16px">Revenue figures shown are your 80% share after Createry's platform fee. Platform fee not included in calculations.</p>
+
   </div>
 </section>
 
 <div class="divider"></div>
+
 <section class="section" style="background:var(--cream)">
   <div class="container" style="max-width:780px">
     <div style="text-align:center;margin-bottom:8px"><span class="section-label">Questions</span></div>
@@ -236,6 +593,7 @@
 </section>
 
 <div class="divider"></div>
+
 <section class="cta-forest">
   <div class="container">
     <h2>Ready to give your audience the app they've been asking for?</h2>
@@ -243,6 +601,7 @@
     <a href="https://easymealplanning.netlify.app" target="_blank" class="btn-white-forest">Start Free Trial →</a>
   </div>
 </section>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -280,6 +639,73 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- Calculator logic -->
+<script>
+  var calcConfig = {
+    newsletter: {
+      rate: 0.04,
+      label: 'at 4% conversion',
+      context: 'Newsletter and email audiences convert at <strong>3–5x the rate of social</strong>. These are high-intent followers who opted in to hear directly from you — the strongest signal of audience trust.'
+    },
+    social: {
+      rate: 0.015,
+      label: 'at 1.5% conversion',
+      context: 'Social following estimates use a <strong>1.5% conversion rate</strong> based on MemberKitchens benchmark data for food creator audiences. Engaged micro-audiences often outperform this.'
+    },
+    blog: {
+      rate: 0.008,
+      label: 'at 0.8% conversion',
+      context: 'Blog and SEO traffic converts conservatively — many visitors are first-time. <strong>Pairing your Createry app link with your email list or social channels</strong> significantly lifts this number.'
+    }
+  };
+
+  var currentAudience = 'social';
+
+  function setAudience(type) {
+    currentAudience = type;
+    document.querySelectorAll('.audience-pill').forEach(function(p) {
+      p.classList.toggle('active', p.dataset.type === type);
+    });
+    document.getElementById('conv-context').innerHTML = calcConfig[type].context;
+    runCalc();
+  }
+
+  function fmtDollars(n) {
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  function runCalc() {
+    var followers = parseInt(document.getElementById('followers-slider').value);
+    document.getElementById('followers-display').textContent = followers.toLocaleString();
+
+    var cfg = calcConfig[currentAudience];
+    var subs = Math.round(followers * cfg.rate);
+    var packBuyers = Math.round(subs * 0.12);
+
+    var subTake  = subs * 9 * 0.80;
+    var packTake = packBuyers * 20 * 0.80;
+    var total    = subTake + packTake;
+
+    document.getElementById('result-subs').textContent        = subs.toLocaleString();
+    document.getElementById('result-conv-label').textContent  = cfg.label;
+    document.getElementById('result-pack-buyers').textContent = packBuyers.toLocaleString();
+    document.getElementById('result-sub-rev').textContent     = fmtDollars(subTake);
+    document.getElementById('result-pack-rev').textContent    = fmtDollars(packTake);
+    document.getElementById('result-total').textContent       = fmtDollars(total);
+
+    var subPct  = total > 0 ? Math.round((subTake  / total) * 100) : 50;
+    var packPct = total > 0 ? Math.round((packTake / total) * 100) : 50;
+
+    document.getElementById('sub-pct-label').textContent  = subPct + '%';
+    document.getElementById('pack-pct-label').textContent = packPct + '%';
+    document.getElementById('sub-bar').style.width        = subPct + '%';
+    document.getElementById('pack-bar').style.width       = packPct + '%';
+  }
+
+  document.getElementById('followers-slider').addEventListener('input', runCalc);
+  runCalc();
+</script>
 
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2C1810;color:#FDF6EE;padding:1rem 1.5rem;z-index:9999;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:0.875rem;">
   <p style="margin:0;line-height:1.5;max-width:680px;">We use cookies to keep you signed in and improve your experience. By continuing to use Createry, you agree to our <a href="https://easymealplanning.netlify.app/cookies" target="_blank" style="color:#F0D4C0;text-decoration:underline;">Cookies Policy</a>.</p>
