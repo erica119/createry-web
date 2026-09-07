@@ -33,7 +33,7 @@ async function submitApply() {
     audience: document.getElementById('a-audience')?.value,
     link: document.getElementById('a-link')?.value,
     message: document.getElementById('a-msg')?.value,
-    _subject: 'New Plate Creator Application'
+    _subject: 'New Createry Creator Application'
   };
   try {
     await fetch('https://formspree.io/f/meepbwjz', {
@@ -57,7 +57,7 @@ async function submitContact() {
     type: document.getElementById('c-type')?.value,
     subject: document.getElementById('c-subject')?.value,
     message: document.getElementById('c-msg')?.value,
-    _subject: 'New Plate Contact Form Message'
+    _subject: 'New Createry Contact Form Message'
   };
   try {
     await fetch('https://formspree.io/f/maqlgzyn', {
