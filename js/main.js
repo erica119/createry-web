@@ -37,6 +37,10 @@ for (const [field, slider] of [[followers, followersRange], [conversion, convers
 calculate();
 
 const contact = document.querySelector('#contact-form');
+const topic = new URLSearchParams(window.location.search).get('topic');
+const topicSelect = document.querySelector('#topic');
+if (topicSelect && topic === 'creator') topicSelect.value = 'Founding creator partnership';
+if (topicSelect && topic === 'lead') topicSelect.value = 'Founding Creator Partnerships Lead role';
 contact?.addEventListener('submit', async event => {
   event.preventDefault();
   if (!contact.reportValidity()) return;
