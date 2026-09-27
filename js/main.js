@@ -41,6 +41,23 @@ const topic = new URLSearchParams(window.location.search).get('topic');
 const topicSelect = document.querySelector('#topic');
 if (topicSelect && topic === 'creator') topicSelect.value = 'Founding creator partnership';
 if (topicSelect && topic === 'lead') topicSelect.value = 'Founding Creator Partnerships Lead role';
+function updateContactContext() {
+  if (!topicSelect) return;
+  const isLead = topicSelect.value === 'Founding Creator Partnerships Lead role';
+  document.querySelectorAll('[data-creator-only]').forEach(field => { field.hidden = isLead; });
+  const title = document.querySelector('#contact-title');
+  const intro = document.querySelector('#contact-intro');
+  const messageLabel = document.querySelector('#message-label');
+  const sideTitle = document.querySelector('#contact-side-title');
+  const sideIntro = document.querySelector('#contact-side-intro');
+  if (title) title.textContent = isLead ? 'Help build the creator program.' : "Let's make your recipes part of their week.";
+  if (intro) intro.textContent = isLead ? 'Tell us about your creator partnership experience and why the pilot role interests you.' : "Tell us about your content, your audience, and what you want to build. We'll follow up to talk through the fit.";
+  if (messageLabel) messageLabel.textContent = isLead ? 'Your relevant experience and interest in the role' : 'What would you like to explore?';
+  if (sideTitle) sideTitle.textContent = isLead ? 'Own the first creator relationships.' : 'Bring your audience closer to the table.';
+  if (sideIntro) sideIntro.textContent = isLead ? 'Share examples of outreach, onboarding, and turning creator feedback into action.' : 'A recipe library, an engaged community, and a point of view on food are enough to start a conversation.';
+}
+topicSelect?.addEventListener('change', updateContactContext);
+updateContactContext();
 contact?.addEventListener('submit', async event => {
   event.preventDefault();
   if (!contact.reportValidity()) return;
