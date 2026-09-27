@@ -12,3 +12,9 @@
   from = "/home"
   to = "/"
   status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/how-it-works"
+  status = 301
+  force = true

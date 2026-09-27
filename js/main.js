@@ -1,72 +1,82 @@
-const APP_URL = 'https://easymealplanning.netlify.app/?creator=test';
+const menu = document.querySelector('.menu-toggle');
+const links = document.querySelector('.nav-links');
+menu?.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  links.classList.toggle('open', open);
+});
 
-function goToApp() { window.open(APP_URL, '_blank'); }
-function openLink(url) { window.open(url, '_blank'); }
+const number = new Intl.NumberFormat('en-US');
+const money = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD', maximumFractionDigits: 0});
+const followers = document.querySelector('#followers');
+const followersRange = document.querySelector('#followers-range');
+const conversion = document.querySelector('#conversion');
+const conversionRange = document.querySelector('#conversion-range');
 
-// Nav scroll
-const nav = document.querySelector('.nav');
-if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
-
-// Hamburger
-const hamburger = document.querySelector('.hamburger');
-const mobileNav = document.querySelector('.mobile-nav');
-if (hamburger && mobileNav) {
-  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-  mobileNav.querySelectorAll('a, button').forEach(el => el.addEventListener('click', () => mobileNav.classList.remove('open')));
+function calculate() {
+  if (!followers || !conversion) return;
+  const audience = Math.max(0, Math.min(100000000, Number(followers.value) || 0));
+  const rate = Math.max(0, Math.min(100, Number(conversion.value) || 0));
+  const subscribers = Math.round(audience * rate / 100);
+  const gross = subscribers * 9;
+  const share = gross * .8;
+  const afterFee = share - 199;
+  document.querySelector('#subscribers').textContent = number.format(subscribers);
+  document.querySelector('#gross').textContent = money.format(gross);
+  document.querySelector('#share').textContent = money.format(share);
+  document.querySelector('#net').textContent = money.format(afterFee);
+  document.querySelector('#equation').textContent = `${number.format(audience)} × ${number.format(rate)}% × $9 × 80% = ${money.format(share)}`;
+  followersRange.value = Math.min(audience, Number(followersRange.max));
+  conversionRange.value = Math.min(rate, Number(conversionRange.max));
 }
 
-// Fade-up animations
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+for (const [field, slider] of [[followers, followersRange], [conversion, conversionRange]]) {
+  field?.addEventListener('input', calculate);
+  slider?.addEventListener('input', () => {field.value = slider.value; calculate();});
+}
+calculate();
 
-// Creator application form
-async function submitApply() {
-  const btn = document.getElementById('apply-btn');
-  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
-  const body = {
-    name: document.getElementById('a-name')?.value,
-    email: document.getElementById('a-email')?.value,
-    brand: document.getElementById('a-brand')?.value,
-    platform: document.getElementById('a-platform')?.value,
-    audience: document.getElementById('a-audience')?.value,
-    link: document.getElementById('a-link')?.value,
-    message: document.getElementById('a-msg')?.value,
-    _subject: 'New Createry Creator Application'
-  };
+const contact = document.querySelector('#contact-form');
+const topic = new URLSearchParams(window.location.search).get('topic');
+const topicSelect = document.querySelector('#topic');
+if (topicSelect && topic === 'creator') topicSelect.value = 'Founding creator partnership';
+if (topicSelect && topic === 'lead') topicSelect.value = 'Founding Creator Partnerships Lead role';
+function updateContactContext() {
+  if (!topicSelect) return;
+  const isLead = topicSelect.value === 'Founding Creator Partnerships Lead role';
+  document.querySelectorAll('[data-creator-only]').forEach(field => { field.hidden = isLead; });
+  const title = document.querySelector('#contact-title');
+  const intro = document.querySelector('#contact-intro');
+  const messageLabel = document.querySelector('#message-label');
+  const sideTitle = document.querySelector('#contact-side-title');
+  const sideIntro = document.querySelector('#contact-side-intro');
+  if (title) title.textContent = isLead ? 'Help build the creator program.' : "Let's make your recipes part of their week.";
+  if (intro) intro.textContent = isLead ? 'Tell us about your creator partnership experience and why the pilot role interests you.' : "Tell us about your content, your audience, and what you want to build. We'll follow up to talk through the fit.";
+  if (messageLabel) messageLabel.textContent = isLead ? 'Your relevant experience and interest in the role' : 'What would you like to explore?';
+  if (sideTitle) sideTitle.textContent = isLead ? 'Own the first creator relationships.' : 'Bring your audience closer to the table.';
+  if (sideIntro) sideIntro.textContent = isLead ? 'Share examples of outreach, onboarding, and turning creator feedback into action.' : 'A recipe library, an engaged community, and a point of view on food are enough to start a conversation.';
+}
+topicSelect?.addEventListener('change', updateContactContext);
+updateContactContext();
+contact?.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (!contact.reportValidity()) return;
+  const button = contact.querySelector('button[type=submit]');
+  const status = document.querySelector('#form-status');
+  button.disabled = true;
+  status.textContent = 'Sending…';
   try {
-    await fetch('https://formspree.io/f/meepbwjz', {
+    const response = await fetch('https://formspree.io/f/maqlgzyn', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(body)
+      headers: {'Accept': 'application/json'},
+      body: new FormData(contact),
     });
-  } catch(e) { console.log('Form submission error:', e); }
-  document.getElementById('apply-form')?.style.setProperty('display', 'none');
-  const s = document.getElementById('apply-success');
-  if (s) s.classList.add('visible');
-}
-
-// Contact form
-async function submitContact() {
-  const btn = document.getElementById('contact-btn');
-  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
-  const body = {
-    name: document.getElementById('c-name')?.value,
-    email: document.getElementById('c-email')?.value,
-    type: document.getElementById('c-type')?.value,
-    subject: document.getElementById('c-subject')?.value,
-    message: document.getElementById('c-msg')?.value,
-    _subject: 'New Createry Contact Form Message'
-  };
-  try {
-    await fetch('https://formspree.io/f/maqlgzyn', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(body)
-    });
-  } catch(e) { console.log('Form submission error:', e); }
-  document.getElementById('contact-form')?.style.setProperty('display', 'none');
-  const s = document.getElementById('contact-success');
-  if (s) s.classList.add('visible');
-}
+    if (!response.ok) throw new Error(`Form service returned ${response.status}`);
+    contact.reset();
+    status.textContent = 'Thanks. Your message has been sent.';
+  } catch (error) {
+    status.textContent = 'The message could not be sent. Please try again.';
+  } finally {
+    button.disabled = false;
+  }
+});
