@@ -1,42 +1,21 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" role="img" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#FDF6EE"/>
-  <circle cx="1050" cy="80" r="320" fill="#F0D4C0" opacity="0.5"/>
-  <circle cx="200" cy="580" r="200" fill="#F0D4C0" opacity="0.3"/>
-  <rect x="0" y="0" width="6" height="630" fill="#C4622D"/>
-  <rect x="80" y="100" width="60" height="4" fill="#C4622D" rx="2"/>
-  <text x="80" y="210" font-family="Georgia, serif" font-size="88" font-weight="700" fill="#2C1810" letter-spacing="-2">Plate.</text>
-  <text x="80" y="290" font-family="Georgia, serif" font-size="42" fill="#4A3728" font-weight="400">Dinner, planned.</text>
-  <text x="80" y="342" font-family="Georgia, serif" font-size="42" fill="#4A3728" font-weight="400">Every week.</text>
-  <text x="80" y="396" font-family="Georgia, serif" font-size="42" fill="#C4622D" font-style="italic" font-weight="400">Automatically.</text>
-  <text x="80" y="470" font-family="system-ui, sans-serif" font-size="20" fill="#9B8B82" font-weight="400">AI-powered meal planning for real families.</text>
-  <rect x="80" y="530" width="180" height="48" rx="10" fill="#C4622D"/>
-  <text x="170" y="561" font-family="system-ui, sans-serif" font-size="15" fill="white" text-anchor="middle" font-weight="600">Start Meal Planning</text>
-  <rect x="730" y="100" width="380" height="420" rx="16" fill="white" stroke="#E8D5B7" stroke-width="1.5"/>
-  <rect x="730" y="100" width="380" height="56" rx="16" fill="#2C1810"/>
-  <rect x="730" y="136" width="380" height="20" fill="#2C1810"/>
-  <text x="920" y="135" font-family="Georgia, serif" font-size="18" fill="#FDF6EE" text-anchor="middle" font-weight="700">Plate.</text>
-  <text x="1010" y="135" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" text-anchor="middle">Week of Apr 14</text>
-  <rect x="750" y="172" width="340" height="44" rx="8" fill="#FFF9F0" stroke="#E8D5B7" stroke-width="1"/>
-  <rect x="750" y="172" width="4" height="44" rx="2" fill="#C4622D"/>
-  <text x="764" y="191" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">MON</text>
-  <text x="764" y="208" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Lemon Herb Chicken</text>
-  <text x="1075" y="200" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">30 min</text>
-  <rect x="750" y="224" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
-  <text x="764" y="243" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">TUE</text>
-  <text x="764" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Shrimp Stir Fry</text>
-  <text x="1075" y="252" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">25 min</text>
-  <rect x="750" y="276" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
-  <text x="764" y="295" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">WED</text>
-  <text x="764" y="312" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" font-style="italic">No-cook night</text>
-  <rect x="750" y="328" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
-  <text x="764" y="347" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">THU</text>
-  <text x="764" y="364" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Black Bean Tacos</text>
-  <text x="1075" y="356" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">20 min</text>
-  <rect x="750" y="380" width="340" height="44" rx="8" fill="white" stroke="#E8D5B7" stroke-width="1"/>
-  <text x="764" y="399" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" font-weight="600">FRI</text>
-  <text x="764" y="416" font-family="system-ui, sans-serif" font-size="13" fill="#2C1810">Salmon + Roasted Veg</text>
-  <text x="1075" y="408" font-family="system-ui, sans-serif" font-size="12" fill="#9B8B82" text-anchor="end">35 min</text>
-  <rect x="750" y="440" width="340" height="44" rx="8" fill="#C4622D"/>
-  <text x="920" y="468" font-family="system-ui, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="600">View Shopping List →</text>
-  <text x="920" y="572" font-family="system-ui, sans-serif" font-size="13" fill="#9B8B82" text-anchor="middle">plateweb.netlify.app</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Createry — Your recipes. Their real life.</title><desc id="desc">Createry helps food creators turn recipes into meal plans and shopping lists for their audience.</desc>
+<rect width="1200" height="630" fill="#FAF3E8"/>
+<circle cx="1050" cy="25" r="260" fill="#EFD9C4"/>
+<circle cx="1140" cy="600" r="360" fill="#E8EEDC"/>
+<rect x="0" y="0" width="15" height="630" fill="#C9471F"/>
+<g transform="translate(95 190) scale(0.75)">
+<g fill="none" style="stroke:#1F3B30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M83.07,-79.78 A44.5,44.5 0 1 0 83.07,-20.22"/></g>
+<g fill="none" style="stroke:#1F3B30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M101.07,-5.5 L101.07,-62.5 A32,32 0 0 1 133.07,-94.5 L150.67,-94.5"/></g>
+<g fill="none" style="stroke:#C9471F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M252.67,-50 A44.5,44.5 0 1 0 241.24,-20.22"/><path d="M163.67,-50 L252.67,-50"/></g>
+<g fill="none" style="stroke:#C9471F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M270.67,-50 A44.5,44.5 0 1 0 359.67,-50 A44.5,44.5 0 1 0 270.67,-50 Z"/><path d="M359.67,-94.5 L359.67,-5.5"/></g>
+<g fill="none" style="stroke:#C9471F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M390.67,-124.5 L390.67,-29.5 A24,24 0 0 0 414.67,-5.5 L421.87,-5.5"/><path d="M375.67,-94.5 L410.67,-94.5"/></g>
+<g fill="none" style="stroke:#1F3B30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M537.87,-50 A44.5,44.5 0 1 0 526.44,-20.22"/></g>
+<g style="fill:#C9471F"><path d="M448.87,-65.95 L480.49,-65.95 C485.93,-65.95 486.92,-71.45 490.39,-71.45 L496.44,-71.45 L496.44,-49.45 L490.39,-49.45 C486.92,-49.45 485.93,-54.95 480.49,-54.95 L448.87,-54.95 Z"/><path d="M495.94,-71.45 L525.42,-71.45 A2.49,2.49 0 0 1 525.42,-66.46 L495.94,-66.46 Z"/><path d="M495.94,-62.94 L525.42,-62.94 A2.49,2.49 0 0 1 525.42,-57.96 L495.94,-57.96 Z"/><path d="M495.94,-54.44 L525.42,-54.44 A2.49,2.49 0 0 1 525.42,-49.45 L495.94,-49.45 Z"/><path d="M448.87,-39.55 L480.29,-39.55 L484.14,-43.4 L492.62,-43.4 A34.8,14.85 0 0 1 527.42,-28.55 L448.87,-28.55 Z"/></g>
+<g fill="none" style="stroke:#1F3B30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M555.87,-5.5 L555.87,-62.5 A32,32 0 0 1 587.87,-94.5 L605.47,-94.5"/></g>
+<g fill="none" style="stroke:#1F3B30" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"><path d="M616.67,-94.5 L658.67,-1.65"/><path d="M700.67,-94.5 L645.11,30.5"/></g>
+</g>
+<text x="95" y="350" font-family="Georgia,serif" font-weight="700" font-size="70" fill="#1F3B30">Your recipes.</text>
+<text x="95" y="430" font-family="Georgia,serif" font-weight="700" font-size="70" fill="#C9471F">Their real life.</text>
+<text x="98" y="525" font-family="Arial,sans-serif" font-size="29" fill="#52645A">Branded meal plans and shopping lists for food creators.</text>
 </svg>
